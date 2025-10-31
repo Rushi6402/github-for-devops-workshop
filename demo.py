@@ -1,7 +1,30 @@
-def my_function():
+name: Lint Python Code
 
-    a = 5
-    return a 
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
+jobs:
+  pylint:
+    name: Run Pylint
+    runs-on: ubuntu-latest
 
-my_function()
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pylint
+
+      - name: Run Pylint
+        run: |
+          pylint **/*.py

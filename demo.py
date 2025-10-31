@@ -26,5 +26,5 @@ jobs:
 
       - name: Run Pylint
         run: |
-          # Run pylint on all Python files, ignoring missing __init__.py warnings
+          echo "Running pylint on all Python files..."
           pylint $(git ls-files '*.py') || true

@@ -1,1 +1,29 @@
- i am form github
+git status
+ clear
+git add .
+git status
+clear
+git status
+git commit -m "added testing files"
+clear
+git status
+rm testing.py
+ls
+clear
+git status
+git restore testing.py
+clear
+git status
+
+git remote add origin https://github.com/Rushi6402/git-github.git
+git remote -v
+git status
+ 
+git remote set-url origin https://github.com/Rushi6402/git-github.git
+clear
+git remote -v
+git push origin master
+clear
+
+
+this is some new changes
